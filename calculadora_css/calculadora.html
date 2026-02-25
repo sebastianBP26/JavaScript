@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Calculadora IVA </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">    
+</head>
+<body>
+    <section class = "section">
+        <div class = "container">
+            <h1 class = "Title"> Calculadora de IVA </h1>
+            <p class = "subtitle"> Bienvenido a la calculadora de IVA </p>
+            <div class = "columns"> 
+                <div class = "column">
+                    <div class = "field">
+                        <label class="label"> Cantidad </label>
+                        <div class = "control">
+                            <input id = "value_1" class = "input" type="text" placeholder="Escribe tu cantidad">
+                        </div>
+                        <p class = "help"> 
+                            Recuerda escribir la cantidad en Pesos Mexicanos
+                        </p>
+                        <div class = "buttons">
+                            <button class = "button is-info" onclick="getIva()">  Calcular IVA  </button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "column has-background-info has-text-centered is-size-3">
+                    <h2 id = "amount_value" class = "has-text-primary-invert"></h2>
+                    <h2 id = "iva_value" class = "has-text-primary-invert"></h2>
+                    <h2 id = "total_value" class = "has-text-primary-invert"></h2>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</body>
+<script src = "calculate_iva_2.js"></script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Caja contenedor usando class para definir "estilos" de elementos -->
+    <div class = "container">
+        <div class = "row">
+            Cantidad: <input id = "value_1" type="text">
+        </div>
+        <div class = "row">
+            Porcentaje: <input id = "value_2" type="text">
+        </div>
+        <div class = "row">
+            <button onclick = "getIva()">
+                Calcula IVA 
+            </button>
+        </div>
+    </div>
+
+    <div>
+        <h4 id = "result">
+            Resultado: 
+        </h4>
+    </div>
+</body>
+<script src = "calculate_iva.js"></script>
+</html>

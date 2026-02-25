@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script src = "decimal.js"></script>
+<script>
+    let error_sum  = 0.1 + 0.2;
+    console.log(error_sum);
+
+    // Usando la biblioteca
+    let decimal_sum = new Decimal(0.1) + new Decimal(0.2);
+    console.log(decimal_sum);
+
+    let n1 = new Decimal(0.1);
+    let n2 = new Decimal(0.2);
+    sum_decimal = n1.plus(n2)
+    console.log(sum_decimal.toNumber());
+
+    console.log(typeof(sum_decimal));
+    
+</script>
+</html>
