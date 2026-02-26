@@ -20,7 +20,7 @@ Se dividen en dos grandes grupos: Primitivos y No Primitivos
     * Boolean: True o False
     * NaN: Not a Number
     * Undefined:
-    * Symbol
+    * Symbol: Cada símbolo es único e inmutable, se utiliza para crear identificadores únicos para objetos.|
 
     Observaciones:
     - No se pueden realizar cálculos entre number y bigint

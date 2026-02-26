@@ -1,0 +1,61 @@
+:root{
+    --prmary-color: #22254b;
+    --secondary-color: #373b69;
+    *{
+        box-sizing: border-box;
+    }
+    body{
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+        background-color: var(--prmary-color);
+    }
+}
+
+.title{
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 2.6em;
+}
+
+.movie_title{
+    font-size: 1.4em;
+    color: #fff;
+}
+
+.search{
+    border: 2px solid var(--prmary-color);
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 1rem;
+}
+
+.search::placeholder{
+    color: var(--prmary-color);
+}
+
+.footer{
+    padding: 2em;
+    font-size: 1.4rem;
+}
+
+.green {
+    color: green;
+    font-size: 1em;
+}
+
+.orange {
+    color: orange;
+    font-size: 1em;
+}
+
+.red {
+    color: red;
+    font-size: 1em;
+}
+
+.overview{
+    color: #fff;
+    font-size: 1.2em;
+}
