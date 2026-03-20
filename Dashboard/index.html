@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <title>Tienda para Mascotas</title>
+</head>
+<body>
+    <div class = "pt-5 has-text-centered">
+        <h1 class = "is-size-2">Ventas de Tienda para Mascotas: Shihtzu Bonito</h1>   
+    </div>
+
+    <div class = "columns p-6">
+        
+        <div class = "column has-background-info-light p-6 is-one-third">
+            <div class = "columns has-background-success-light">
+                <div class = "columm has-text-centered">
+                    <h2 class = "is-size-4"> Ventas Totales </h2>
+                    $<span id = "sales_sum" class = "is-size-4">0</span> M.N.
+                </div>
+
+                <div class = "columm has-text-centered">
+                    <h2 class = "is-size-4"> Subtotal</h2>
+                    $<span id = "subtotal_sum" class = "is-size-4">0</span> M.N.
+                </div>
+
+                <div class = "columm has-text-centered">
+                    <h2 class = "is-size-4"> IVA </h2>
+                    $<span id = "iva_sum" class = "is-size-4">0</span> M.N.
+                </div>
+            </div>
+
+            <form id ="form" class = "control">
+                <div class = "columns">
+                    <div class = "column pt-5">
+                        <div class = "control">
+                            <label for="enero"> Enero </label>
+                            <input type="text" id = "enero" class = "input is-small" name = "enero">
+                        </div>
+                        <div class = "control">
+                            <label for="enero"> Febrero </label>
+                            <input type="text" id = "febrero" class = "input is-small" name = "febrero">
+                        </div>
+                        <div class = "control">
+                            <label for="enero"> Marzo </label>
+                            <input type="text" id = "marzo" class = "input is-small" name = "marzo">
+                        </div>
+                        <div class = "control">
+                            <label for="enero"> Abril </label>
+                            <input type="text" id = "abril" class = "input is-small" name = "abril">
+                        </div>
+                        <div class = "control">
+                            <label for="enero"> Mayo </label>
+                            <input type="text" id = "mayo" class = "input is-small" name = "mayo">
+                        </div>
+                        <div class = "control">
+                            <label for="enero"> Junio </label>
+                            <input type="text" id = "junio" class = "input is-small" name = "junio">
+                        </div>
+                    </div>
+
+                        <div class = "column pt-5">
+                            <div class = "control">
+                                <label for="enero"> Julio </label>
+                                <input type="text" id = "julio" class = "input is-small" name = "julio">
+                            </div>
+                            <div class = "control">
+                                <label for="enero"> Agosto </label>
+                                <input type="text" id = "agosto" class = "input is-small" name = "agosto">
+                            </div>
+                            <div class = "control">
+                                <label for="enero"> Septiembre </label>
+                                <input type="text" id = "septiembre" class = "input is-small" name = "septiembre">
+                            </div>
+                            <div class = "control">
+                                <label for="enero"> Octubre </label>
+                                <input type="text" id = "octubre" class = "input is-small" name = "octubre">
+                            </div>
+                            <div class = "control">
+                                <label for="enero"> Noviembre </label>
+                                <input type="text" id = "noviembre" class = "input is-small" name = "noviembre">
+                            </div>
+                            <div class = "control">
+                                <label for="enero"> Diciembre </label>
+                                <input type="text" id = "diciembre" class = "input is-small" name = "diciembre">
+                            </div>
+                        </div>
+                </div>
+            </form>
+            <div class = "columns has-background-success-light mt-4">
+                <div class = "column has-text-centered">
+                    <span class = "is-size-3"> Total: </span>
+                    $<span id ="sales_sum2" class="is-size-3">0</span> M.N.
+
+                </div>
+            </div>
+        </div>  
+        
+        <div class = "column">
+            <h2>Gráfico de ventas Mensuales</h2>
+            <canvas id = "salesChart"></canvas>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
