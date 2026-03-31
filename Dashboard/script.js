@@ -29,7 +29,7 @@ function createGraphs(){
     }
 
     salesChart = new Chart(ctx, {
-        type: 'line',
+        type: 'bar',
         data: {
             labels: ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'],
             datasets: [{
