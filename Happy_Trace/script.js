@@ -38,6 +38,7 @@ canvas.addEventListener('mousedown', (e) => {
 });
 
 canvas.addEventListener('touchstart', (e) => {
+    e.preventDefault(); // Prevenir el desplazamiento
     isPressed = true;
     const touch = e.touches[0];
     const rect = canvas.getBoundingClientRect();
@@ -53,6 +54,7 @@ document.addEventListener('mouseup', () => {
 });
 
 document.addEventListener('touchend', () => {
+    e.preventDefault(); // Prevenir el desplazamiento
     isPressed = false;
     x = undefined;
     y = undefined;
@@ -71,6 +73,7 @@ canvas.addEventListener('mousemove', (e) => {
 });
 
 canvas.addEventListener('touchmove', (e) => {
+    e.preventDefault(); // Prevenir el desplazamiento
     if (isPressed) {
         const touch = e.touches[0];
         const rect = canvas.getBoundingClientRect();
