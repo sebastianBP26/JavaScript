@@ -1,8 +1,26 @@
-
 // Declaración de variables
 const canvas = document.getElementById('canvas');
-canvas.width = 1196;
-canvas.height = 600;
+const ctx = canvas.getContext('2d');
+const toolbox = document.querySelector('.toolbox');
+const title = document.querySelector('h1');
+
+// Ajustar el tamaño del canvas dinámicamente
+function resizeCanvas() {
+    const titleHeight = title.offsetHeight; // Altura del título
+    const toolboxHeight = toolbox.offsetHeight; // Altura de la barra de herramientas
+
+    // Ajustar el tamaño del canvas dejando espacio para el título y la barra de herramientas
+    canvas.width = window.innerWidth - 250; // Ancho de la ventana
+    canvas.height = window.innerHeight - titleHeight - toolboxHeight - 100; // Alto disponible
+    cleanScreen(); // Limpiar el canvas después de redimensionar
+}
+
+// Llama a la función al cargar la página
+resizeCanvas();
+
+// Ajustar el tamaño del canvas al cambiar el tamaño de la ventana
+window.addEventListener('resize', resizeCanvas);
+
 
 // Botones
 const increaseBtn = document.getElementById('increase');
@@ -10,15 +28,16 @@ const decreaseBtn = document.getElementById('decrease');
 const sizeEl = document.getElementById('size');
 const colorEl = document.getElementById('color');
 const clearEl = document.getElementById('clear');
+const eraserBtn = document.getElementById('eraser');
 const downloadEl = document.getElementById('download-btn');
 
 // Activación de canvas
-const ctx = canvas.getContext('2d');
 cleanScreen(); // Limpiar el canvas al iniciar
 
 // Variables para el canvas
 let size = 10;
 let isPressed = false;
+let isEraserActive = false;
 colorEl.value = 'black';
 let color = colorEl.value;
 let x;
@@ -73,7 +92,7 @@ canvas.addEventListener('mousemove', (e) => {
 });
 
 canvas.addEventListener('touchmove', (e) => {
-    e.preventDefault(); // Prevenir el desplazamiento
+    e.preventDefault();
     if (isPressed) {
         const touch = e.touches[0];
         const rect = canvas.getBoundingClientRect();
@@ -150,3 +169,18 @@ downloadEl.addEventListener('click', () => {
     createEl.click(); // Simular el click para descargar la imagen
     createEl.remove(); // Eliminar el elemento creado
 })
+
+// Evento para activar/desactivar la goma
+eraserBtn.addEventListener('click', () => {
+    if (!isEraserActive) {
+        isEraserActive = true;
+        color = '#FFFFFF'; // Cambiar el color del trazo a blanco (color del fondo)
+        eraserBtn.style.backgroundColor = '#333'; // Indicar que la goma está activa
+        eraserBtn.style.color = '#fff';
+    } else {
+        isEraserActive = false;
+        color = colorEl.value; // Restaurar el color seleccionado
+        eraserBtn.style.backgroundColor = '#ff6666'; // Restaurar el estilo del botón
+        eraserBtn.style.color = 'white';
+    }
+});

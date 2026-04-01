@@ -56,3 +56,9 @@ canvas {
     height: 50px;
     width: 150px;
 }
+
+#eraser {
+    background-color: #0071CE;
+    color: white;
+    font-weight: bold;
+}
