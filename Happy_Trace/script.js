@@ -28,29 +28,60 @@ let y;
 
 // Identificamos las coordenadas de x y y de donde esta pintando
 // Solo nos interesa cuando presiona dentro del canvas
+// Eventos del mouse y táctiles
+
+// Evento para comenzar a dibujar
 canvas.addEventListener('mousedown', (e) => {
     isPressed = true;
     x = e.offsetX; 
     y = e.offsetY;
-})
+});
 
-document.addEventListener('mouseup', (e) => {
+canvas.addEventListener('touchstart', (e) => {
+    isPressed = true;
+    const touch = e.touches[0];
+    const rect = canvas.getBoundingClientRect();
+    x = touch.clientX - rect.left;
+    y = touch.clientY - rect.top;
+});
+
+// Evento para detener el dibujo
+document.addEventListener('mouseup', () => {
     isPressed = false;
     x = undefined;
     y = undefined;
-})
+});
 
+document.addEventListener('touchend', () => {
+    isPressed = false;
+    x = undefined;
+    y = undefined;
+});
+
+// Evento para dibujar mientras se mueve
 canvas.addEventListener('mousemove', (e) => {
-    // Uso de if
-    if(isPressed){
+    if (isPressed) {
         const x2 = e.offsetX;
         const y2 = e.offsetY;
-        drawCircle(x2,y2); // Funciones que dibujan el circulo y la linea
-        drawLine(x,y,x2,y2);
+        drawCircle(x2, y2);
+        drawLine(x, y, x2, y2);
         x = x2;
         y = y2;
     }
-})
+});
+
+canvas.addEventListener('touchmove', (e) => {
+    if (isPressed) {
+        const touch = e.touches[0];
+        const rect = canvas.getBoundingClientRect();
+        const x2 = touch.clientX - rect.left;
+        const y2 = touch.clientY - rect.top;
+        drawCircle(x2, y2);
+        drawLine(x, y, x2, y2);
+        x = x2;
+        y = y2;
+    }
+});
 
 function drawCircle(x,y) {
     ctx.beginPath();
