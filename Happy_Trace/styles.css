@@ -34,6 +34,9 @@ canvas {
     display: flex;
     width: 1200px;
     padding: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 100%;
 }
 
 .toolbox > * {

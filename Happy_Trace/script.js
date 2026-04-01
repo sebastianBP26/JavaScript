@@ -9,9 +9,12 @@ function resizeCanvas() {
     const titleHeight = title.offsetHeight; // Altura del título
     const toolboxHeight = toolbox.offsetHeight; // Altura de la barra de herramientas
 
+    // Usar visualViewport.height si está disponible (mejor para móviles)
+    const viewportHeight = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+
     // Ajustar el tamaño del canvas dejando espacio para el título y la barra de herramientas
-    canvas.width = window.innerWidth - 250; // Ancho de la ventana
-    canvas.height = window.innerHeight - titleHeight - toolboxHeight - 100; // Alto disponible
+    canvas.width = window.innerWidth; // Ancho de la ventana
+    canvas.height = viewportHeight - titleHeight - toolboxHeight - 100; // Alto disponible
     cleanScreen(); // Limpiar el canvas después de redimensionar
 }
 
