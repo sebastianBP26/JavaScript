@@ -14,6 +14,19 @@ function createBox(item) {
         <div class="info">${text}</div>
     `;
 
+    box.addEventListener('click', () => {
+        window.scrollTo(0,0);
+        document.getElementById('text-box').classList.toggle('show');
+        document.getElementById('product_name').innerText = item.text;
+        document.getElementById('product_description').innerText = item.description;
+        document.getElementById('product_price').innerText = item.price;
+        document.getElementById('product_image').src = item.image;
+
+    })
     main.appendChild(box);
 }
+
+closeBtn.addEventListener('click', () => {
+    document.getElementById('text-box').classList.remove('show');
+})
 
